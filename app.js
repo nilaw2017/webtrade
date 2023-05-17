@@ -25,6 +25,9 @@ db.connect((err) => {
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("/login", (req, res)=> {
+  res.render('')
+})
 app.listen(process.env.PORT, () => {
   console.log("Server has been started on PORT", process.env.PORT);
 });
