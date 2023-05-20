@@ -22,12 +22,9 @@ db.connect((err) => {
     ? console.log(err)
     : console.log("Database has been connected connected successfully");
 });
-app.get("/", (req, res) => {
-  res.render("index");
-});
-app.get("/login", (req, res)=> {
-  res.render('')
-})
+
+app.use("/", require("./routes/index"))
+
 app.listen(process.env.PORT, () => {
   console.log("Server has been started on PORT", process.env.PORT);
 });
