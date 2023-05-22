@@ -3,13 +3,13 @@
   <%- include("../components/navBar") %>
   <form action="" method="POST" class="mt-5 container ps-5 pe-5">
     <div class="mb-2 d-grid grid-temp-col-3 w-50 m-auto login-container">
-      <label for="business_name">Business Name:</label>
+      <label for="company_name">Company Name:</label>
       <input
         class="col-span-2"
         type="text"
-        name="business_name"
-        id="business_name"
-        placeholder="Business Name"
+        name="company_name"
+        id="company_name"
+        placeholder="Company Name"
       />
     </div>
     <div class="mb-2 d-grid grid-temp-col-3 w-50 m-auto login-container">
@@ -43,7 +43,20 @@
       />
     </div>
     <div class="d-flex justify-content-around">
-      <input type="submit" value="Register" />
+      <button type="submit" onclick="register()">Register</button>
     </div>
   </form>
 </body>
+<script>
+  function register() {
+    const company_name = document.getElementById("company_name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirm_password = document.getElementById("confirm-password").value;
+    
+    return fetch("/register", {
+      method: "POST",
+      body: JSON.stringify({company_name, email, password})
+    });
+  }
+</script>

@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 router.get("/login", (req, res) => {
   res.render("pages/login");
 });
-router.get("/register", (req, res)=> {
+router.post("/register", (req, res)=> {
   res.render("pages/register")
 })
 
