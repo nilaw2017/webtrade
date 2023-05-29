@@ -9,13 +9,17 @@ const sequelize = new Sequelize(
   },
 );
 
-const Users = sequelize.define("users", {
+const User = sequelize.define("users", {
   id: {
     allowNull: false,
     primaryKey: true,
     autoIncrement: false,
     type: Sequelize.UUID,
     defaultValue: Sequelize.UUIDV4,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   name: {
     type: DataTypes.STRING,
@@ -34,9 +38,9 @@ const Users = sequelize.define("users", {
     type: DataTypes.STRING,
     defaultValue: "business",
     allowNull: false,
-  }
+  },
 });
 
-sequelize.sync();
+// sequelize.sync({alter: true});
 
-module.exports = { Users };
+module.exports = { User };

@@ -24,6 +24,8 @@
 
   "dependencies": {
 
+    "bcryptjs": "^2.4.3",
+
     "dotenv": "^16.0.3",
 
     "ejs": "^3.1.9",
@@ -34,7 +36,11 @@
 
     "mysql2": "^3.3.0",
 
-    "sequelize": "^6.31.1"
+    "sequelize": "^6.31.1",
+
+    "sweetalert2": "^11.7.6",
+
+    "toastify-js": "^1.12.0"
 
   }
 

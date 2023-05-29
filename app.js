@@ -14,6 +14,8 @@ const db = mysql.createConnection({
 const publicDir = path.join(__dirname, "/public");
 
 app.use(express.static(publicDir));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.set("view engine", "ejs");
 
@@ -23,7 +25,7 @@ db.connect((err) => {
     : console.log("Database has been connected connected successfully");
 });
 
-app.use("/", require("./routes/index"))
+app.use("/", require("./routes/index"));
 
 app.listen(process.env.PORT, () => {
   console.log("Server has been started on PORT", process.env.PORT);
